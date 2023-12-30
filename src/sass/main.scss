@@ -1,0 +1,77 @@
+@import "variables";
+@import "./components/intro";
+
+@font-face {
+  font-family: "RobotoBold";
+  font-weight: 600;
+  font-style: normal;
+  src: url("../../public/fonts/woff2/Roboto-Bold.woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "RobotoRegular";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../../public/fonts/woff2/Roboto-Regular.woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "RobotoMedium";
+  font-weight: 500;
+  font-style: normal;
+  src: url("../../public/fonts/woff2/Roboto-Medium.woff2");
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  text-decoration: none;
+  list-style: none;
+  //background: $bgThemeColor;
+  background: #fff;
+  transition: 0.3s;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2 {
+  font-family: "RobotoBold";
+  color: $headlineColor;
+}
+p,
+a {
+  font-family: "RobotoMedium";
+  color: $paragraphColor;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    font-size: max(32px, $index * 2) !important;
+    letter-spacing: 0.1em;
+
+    &::after {
+      display: block;
+      content: "";
+      margin: 5px auto;
+      width: 75%;
+      height: 2px;
+      background: $paletteRed;
+    }
+  }
+  p {
+    text-align: center;
+    letter-spacing: 0.1em;
+    font-size: max(14px, $index / 1.2) !important;
+  }
+}

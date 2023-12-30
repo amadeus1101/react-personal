@@ -1,9 +1,12 @@
+import Intro from "./components/Intro";
+
+import "./sass/main.scss";
+
 function App() {
   return (
-    <>
-      <h1>Hi</h1>
-      <p>I am template</p>
-    </>
+    <div className="wrapper">
+      <Intro />
+    </div>
   );
 }
 
