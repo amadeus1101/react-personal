@@ -1,150 +1,175 @@
 .intro {
-  display: flex;
+  transition: 0.3s;
   width: 100%;
   height: 100vh;
-  padding: 0 120px;
+  height: 100dvh;
+  display: flex;
   justify-content: center;
   align-items: center;
-  .intro__container {
-    transition: 0.3s;
-    width: 100%;
-    max-width: 1440px;
+  .content {
+    position: absolute;
+    z-index: 15;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    .intro__content {
+    flex-direction: column;
+    align-items: start;
+    h1 {
+      font-size: max(42px, $index * 3);
+      letter-spacing: 0.1em;
+    }
+    .marquee {
+      margin: calc($index * 1) 0 calc($index * 1.5);
       display: flex;
-      flex-direction: column;
-      align-items: start;
-      position: absolute;
-      z-index: 15;
-      h1 {
-        font-size: max(36px, $index * 3);
-        letter-spacing: 0.1em;
-      }
-      .marquee {
-        display: flex;
-        align-items: center;
-        margin: calc($index * 1) 0 calc($index * 1.5);
-
-        p {
-          font-family: "RobotoRegular";
-          color: #888888;
-          font-size: max(16px, $index);
-          letter-spacing: 0.07em;
-        }
-        span {
-          display: block;
-          font-family: "RobotoRegular";
-          color: #888888;
-          font-size: max(14px, $index / 1.15);
-          letter-spacing: 0.07em;
-          overflow: hidden;
-          border-right: 2px solid $paletteRed;
-          white-space: nowrap;
-          animation: blink-caret 0.5s infinite,
-            typing 3s steps(30, end) infinite;
-        }
-      }
-
-      a.button {
-        color: $paragraphColor;
-        background: #fff;
+      align-items: center;
+      p {
+        color: #888888;
+        font-family: "RobotoRegular";
+        font-size: max(16px, $index);
         letter-spacing: 0.07em;
-        font-size: max(16px, $index * 1.1);
-        position: relative;
-        padding: calc($index / 2) calc($index * 4);
-        border: 2px solid #5f5f5f;
-        transition: background 1s;
-        &::before {
-          display: block;
-          background: #fff;
-          content: "";
-          position: absolute;
-          top: 6px;
-          left: -3px;
-          width: calc(100% + 6px);
-          height: calc((100% - 14px));
-          transition: 0.3s ease-in-out;
-          transform: scaleY(1);
-        }
-        &:hover::before {
-          transform: scaleY(0);
-        }
-        &::after {
-          display: block;
-          content: "";
-          position: absolute;
-          left: 6px;
-          top: -3px;
-          height: calc(100% + 6px);
-          width: calc((100% - 14px));
-          background: $bgThemeColor;
-          transition: 0.5s ease-in-out;
-          transition-delay: 0.3s;
-          transform: scaleX(1);
-        }
-        &:hover::after {
-          transform: scaleX(0);
-        }
-        &:hover {
-          transition-delay: 0.8s;
-          background: $paletteRed;
-          span {
-            transition-delay: 0.8s;
-            color: #fff;
-          }
-        }
-        span {
-          transition: 0.5s;
-          z-index: 3;
-          position: relative;
-        }
+      }
+      span {
+        color: #888888;
+        font-family: "RobotoRegular";
+        font-size: max(14px, $index / 1.15);
+        letter-spacing: 0.07em;
+        overflow: hidden;
+        display: block;
+        border-right: 2px solid $paletteRed;
+        white-space: nowrap;
+        animation: blink-caret 0.5s infinite, typing 3s steps(30, end) infinite;
       }
     }
 
-    .glitch {
-      font-family: "RobotoBold";
-      font-weight: 600;
-      font-size: max(320px, $index * 25);
-      color: #5f5f5f;
+    a.button {
       position: relative;
-      padding: 30px;
-      opacity: 0.1;
-      &::before,
-      &::after {
-        content: "A";
-        color: #5f5f5f;
-        position: absolute;
-        overflow: hidden;
-        padding: 30px;
-        //clip: rect(0, 900px, 200px, 100px);
-      }
+      padding: calc($index / 2) calc($index * 4);
+      transition: background 1s;
+      border: 2px solid #5f5f5f;
+      color: $paragraphColor;
+      background: #fff;
+      font-size: max(16px, $index * 1.1);
+      letter-spacing: 0.07em;
       &::before {
-        top: -3px;
-        left: 7px;
-        text-shadow: 8px 0 $paletteRed;
-        animation: glitch-before 2s linear 0s infinite alternate-reverse;
+        position: absolute;
+        top: 6px;
+        left: -3px;
+        width: calc(100% + 6px);
+        height: calc((100% - 14px));
+        display: block;
+        background: #fff;
+        content: "";
+        transition: 0.3s ease-in-out;
+        transform: scaleY(1);
+      }
+      &:hover::before {
+        transform: scaleY(0);
       }
       &::after {
-        top: 3px;
-        left: -7px;
-        text-shadow: -8px 0 $paletteBlue;
-        animation: glitch-after 2s linear 0s infinite alternate;
-        //animation: glitch-after 2s linear 0s infinite alternate-reverse;
+        display: block;
+        content: "";
+        position: absolute;
+        left: 6px;
+        top: -3px;
+        height: calc(100% + 6px);
+        width: calc((100% - 14px));
+        background: $bgThemeColor;
+        transition: 0.5s ease-in-out;
+        transition-delay: 0.3s;
+        transform: scaleX(1);
+      }
+      &:hover::after {
+        transform: scaleX(0);
+      }
+      &:hover {
+        transition-delay: 0.8s;
+        background: $paletteRed;
+        span {
+          transition-delay: 0.8s;
+          color: #fff;
+        }
+      }
+      span {
+        transition: 0.5s;
+        z-index: 3;
+        position: relative;
       }
     }
-    .deco {
+  }
+
+  .glitch {
+    font-family: "RobotoBold";
+    font-weight: 600;
+    font-size: max(320px, $index * 25);
+    user-select: none;
+    color: #5f5f5f;
+    position: relative;
+    padding: 30px;
+    opacity: 0.1;
+    &::before,
+    &::after {
+      content: "A";
+      color: #5f5f5f;
       position: absolute;
-      bottom: 0;
-      right: 0;
-      display: flex;
-      padding: 10px;
-      svg {
-        width: 24px;
-        height: 24px;
-        margin: 0 5px;
-      }
+      overflow: hidden;
+      padding: 30px;
+      //clip: rect(0, 900px, 200px, 100px);
+    }
+    &::before {
+      top: -3px;
+      left: 7px;
+      text-shadow: 8px 0 $paletteRed;
+      animation: glitch-before 2s linear 0s infinite alternate-reverse;
+    }
+    &::after {
+      top: 3px;
+      left: -7px;
+      text-shadow: -8px 0 $paletteBlue;
+      animation: glitch-after 2s linear 0s infinite alternate;
+      //animation: glitch-after 2s linear 0s infinite alternate-reverse;
+    }
+  }
+  .deco {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    padding: 10px;
+    svg {
+      width: 24px;
+      height: 24px;
+      margin: 0 5px;
+    }
+  }
+  .overlay svg {
+    position: absolute;
+    &:nth-child(1) {
+      width: 64px;
+      height: 64px;
+      top: 17%;
+      left: 12%;
+    }
+    &:nth-child(2) {
+      width: 36px;
+      height: 36px;
+      top: 75%;
+      right: 15%;
+    }
+    &:nth-child(3) {
+      width: 64px;
+      height: 64px;
+      top: 40%;
+      right: 20%;
+    }
+    &:nth-child(4) {
+      width: 48px;
+      height: 48px;
+      top: 75%;
+      left: 25%;
+    }
+    &:nth-child(5) {
+      width: 24px;
+      height: 24px;
+      top: 15%;
+      right: 45%;
     }
   }
 }
@@ -192,5 +217,39 @@ $numa: 100;
   }
   50% {
     border-color: $paletteRed;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .intro {
+    .content {
+      a.button {
+        width: 100%;
+        padding: 7px 0;
+        text-align: center;
+      }
+    }
+    .deco {
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 526px) {
+  .intro {
+    .content {
+      .marquee {
+        margin: calc((1vw + 1vh) * 2) 0 calc((1vw + 1vh) * 3);
+      }
+    }
+    .deco {
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
   }
 }
