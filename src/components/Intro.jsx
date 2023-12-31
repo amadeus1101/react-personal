@@ -1,4 +1,5 @@
 function Intro() {
+  console.log("Intro renderred");
   return (
     <section className="intro" id="home-sec">
       <div className="content">

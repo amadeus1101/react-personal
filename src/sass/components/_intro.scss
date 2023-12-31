@@ -140,10 +140,16 @@
     }
   }
   .overlay {
-    transition: 0.3s;
-    .triangle {
+    .circle,
+    .triangle,
+    .rectangle,
+    .rumb,
+    .cross {
       position: absolute;
       z-index: 3;
+      //transition: transform 0.3s;
+    }
+    .triangle {
       top: 17%;
       left: 12%;
       svg {
@@ -152,8 +158,6 @@
       }
     }
     .rumb {
-      position: absolute;
-      z-index: 3;
       top: 75%;
       left: 85%;
       svg {
@@ -165,8 +169,6 @@
       }
     }
     .cross {
-      position: absolute;
-      z-index: 3;
       top: 40%;
       left: 80%;
       svg {
@@ -178,8 +180,6 @@
       }
     }
     .circle {
-      position: absolute;
-      z-index: 3;
       top: 75%;
       left: 25%;
       svg {
@@ -188,8 +188,6 @@
       }
     }
     .rectangle {
-      position: absolute;
-      z-index: 3;
       top: 15%;
       left: 55%;
       svg {
