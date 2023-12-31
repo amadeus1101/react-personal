@@ -134,42 +134,68 @@
     display: flex;
     padding: 10px;
     svg {
-      width: 24px;
-      height: 24px;
+      width: 16px;
+      height: 16px;
       margin: 0 5px;
     }
   }
-  .overlay svg {
-    position: absolute;
-    &:nth-child(1) {
-      width: 64px;
-      height: 64px;
+  .overlay {
+    transition: 0.3s;
+    .triangle {
+      position: absolute;
+      z-index: 3;
       top: 17%;
       left: 12%;
+      svg {
+        width: 48px;
+        height: 48px;
+      }
     }
-    &:nth-child(2) {
-      width: 36px;
-      height: 36px;
+    .rumb {
+      position: absolute;
+      z-index: 3;
       top: 75%;
-      right: 15%;
+      left: 85%;
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+      svg rect {
+        stroke: $paletteRed;
+      }
     }
-    &:nth-child(3) {
-      width: 64px;
-      height: 64px;
+    .cross {
+      position: absolute;
+      z-index: 3;
       top: 40%;
-      right: 20%;
+      left: 80%;
+      svg {
+        width: 48px;
+        height: 48px;
+      }
+      svg path {
+        fill: $paletteBlue;
+      }
     }
-    &:nth-child(4) {
-      width: 48px;
-      height: 48px;
+    .circle {
+      position: absolute;
+      z-index: 3;
       top: 75%;
       left: 25%;
+      svg {
+        width: 32px;
+        height: 32px;
+      }
     }
-    &:nth-child(5) {
-      width: 24px;
-      height: 24px;
+    .rectangle {
+      position: absolute;
+      z-index: 3;
       top: 15%;
-      right: 45%;
+      left: 55%;
+      svg {
+        width: 24px;
+        height: 24px;
+      }
     }
   }
 }
@@ -219,7 +245,58 @@ $numa: 100;
     border-color: $paletteRed;
   }
 }
-
+@media screen and (max-width: 1025px) {
+  .intro {
+    .overlay {
+      .triangle {
+        top: 40%;
+        left: 80%;
+        svg {
+          width: 32px;
+          height: 32px;
+        }
+        svg path {
+          stroke: $paletteRed;
+        }
+      }
+      .circle {
+        top: 15%;
+        left: 55%;
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+      .rectangle {
+        top: 75%;
+        left: 25%;
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+        svg rect {
+          stroke: $paletteBlue;
+        }
+      }
+      .rumb {
+        svg rect {
+          stroke: #000;
+        }
+      }
+      .cross {
+        top: 20%;
+        left: 25%;
+        svg {
+          width: 32px;
+          height: 32px;
+        }
+        svg path {
+          fill: #000;
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 769px) {
   .intro {
     .content {
@@ -233,6 +310,57 @@ $numa: 100;
       svg {
         width: 20px;
         height: 20px;
+      }
+    }
+    .overlay {
+      .triangle {
+        top: 15%;
+        left: 55%;
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+        svg path {
+          stroke: $paletteBlue;
+        }
+      }
+      .circle {
+        top: 40%;
+        left: 80%;
+        svg {
+          width: 32px;
+          height: 32px;
+        }
+      }
+      .rectangle {
+        top: 20%;
+        left: 25%;
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+        svg rect {
+          stroke: #000;
+        }
+      }
+      .cross {
+        top: 80%;
+        left: 85%;
+        svg {
+          width: 32px;
+          height: 32px;
+        }
+        svg path {
+          fill: $paletteRed;
+        }
+      }
+      .rumb {
+        top: 75%;
+        left: 25%;
+        svg {
+          width: 32px;
+          height: 32px;
+        }
       }
     }
   }
@@ -249,6 +377,47 @@ $numa: 100;
       svg {
         width: 16px;
         height: 16px;
+      }
+    }
+    .overlay {
+      .cross {
+        top: 15%;
+        left: 55%;
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+      .triangle {
+        top: 85%;
+        left: 70%;
+        svg {
+          width: 32px;
+          height: 32px;
+        }
+      }
+      .circle {
+        left: 85%;
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+      .rectangle {
+        top: 30%;
+        left: 20%;
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+      .rumb {
+        top: 72%;
+        left: 25%;
+        svg {
+          width: 24px;
+          height: 24px;
+        }
       }
     }
   }
