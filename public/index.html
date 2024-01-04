@@ -38,65 +38,92 @@
         changePersonDescription();
         setInterval(changePersonDescription, 3000);
         //-----------------PARALLAX------------------------//
-        const overlay = document.querySelector(".intro");
-        if (overlay) {
-          const round = document.querySelector(".circle");
-          const trian = document.querySelector(".triangle");
-          const rect = document.querySelector(".rectangle");
-          const rumb = document.querySelector(".rumb");
-          const cross = document.querySelector(".cross");
+        //   const overlay = document.querySelector(".intro");
+        //   if (overlay) {
+        //     const round = document.querySelector(".circle");
+        //     const trian = document.querySelector(".triangle");
+        //     const rect = document.querySelector(".rectangle");
+        //     const rumb = document.querySelector(".rumb");
+        //     const cross = document.querySelector(".cross");
 
-          //arguments
-          const speed = 0.1;
-          const speed_round = 5;
-          const speed_trian = 3;
-          const speed_rect = 7;
-          const speed_rumb = 8;
-          const speed_cross = 2;
+        //     //arguments
+        //     const speed = 0.1;
+        //     const speed_round = 5;
+        //     const speed_trian = 3;
+        //     const speed_rect = 7;
+        //     const speed_rumb = 8;
+        //     const speed_cross = 2;
 
-          let posX = 0,
-            posY = 0;
-          let coordX = 0,
-            coordY = 0;
+        //     let posX = 0,
+        //       posY = 0;
+        //     let coordX = 0,
+        //       coordY = 0;
 
-          function setMouseParallaxStyle() {
-            const distX = coordX - posX;
-            const distY = coordY - posY;
+        //     function setMouseParallaxStyle() {
+        //       const distX = coordX - posX;
+        //       const distY = coordY - posY;
 
-            posX += distX * speed;
-            posY += distY * speed;
-            //styles
-            round.style.cssText = `transform: translate(${
-              posX / speed_round
-            }%, ${posY / speed_round}%);`;
-            trian.style.cssText = `transform: translate(${
-              posX / speed_trian
-            }%, ${posY / speed_trian}%);`;
-            rect.style.cssText = `transform: translate(${posX / speed_rect}%, ${
-              posY / speed_rect
-            }%);`;
-            rumb.style.cssText = `transform: translate(${posX / speed_rumb}%, ${
-              posY / speed_rumb
-            }%);`;
-            cross.style.cssText = `transform: translate(${
-              posX / speed_cross
-            }%, ${posY / speed_cross}%);`;
+        //       posX += distX * speed;
+        //       posY += distY * speed;
+        //       //styles
+        //       round.style.cssText = `transform: translate(${
+        //         posX / speed_round
+        //       }%, ${posY / speed_round}%);`;
+        //       trian.style.cssText = `transform: translate(${
+        //         posX / speed_trian
+        //       }%, ${posY / speed_trian}%);`;
+        //       rect.style.cssText = `transform: translate(${posX / speed_rect}%, ${
+        //         posY / speed_rect
+        //       }%);`;
+        //       rumb.style.cssText = `transform: translate(${posX / speed_rumb}%, ${
+        //         posY / speed_rumb
+        //       }%);`;
+        //       cross.style.cssText = `transform: translate(${
+        //         posX / speed_cross
+        //       }%, ${posY / speed_cross}%);`;
 
-            requestAnimationFrame(setMouseParallaxStyle);
-          }
-          setMouseParallaxStyle();
+        //       requestAnimationFrame(setMouseParallaxStyle);
+        //     }
+        //     setMouseParallaxStyle();
 
-          overlay.addEventListener("mousemove", function (e) {
-            const overlayW = overlay.offsetWidth;
-            const overlayH = overlay.offsetHeight;
+        //     overlay.addEventListener("mousemove", function (e) {
+        //       const overlayW = overlay.offsetWidth;
+        //       const overlayH = overlay.offsetHeight;
 
-            const centerX = e.pageX - overlayW / 2;
-            const centerY = e.pageY - overlayH / 2;
+        //       const centerX = e.pageX - overlayW / 2;
+        //       const centerY = e.pageY - overlayH / 2;
 
-            coordX = (centerX / overlayW) * 100;
-            coordY = (centerY / overlayH) * 100;
-          });
-        }
+        //       coordX = (centerX / overlayW) * 100;
+        //       coordY = (centerY / overlayH) * 100;
+        //     });
+        //     console.log(round.firstChild);
+        //     //scroll paralax
+        //     let thresholdSets = [];
+        //     for (let i = 0; i < 1; i += 0.005) {
+        //       thresholdSets.push(i);
+        //     }
+
+        //     const callback = function (entries, observer) {
+        //       const scrollTop = (window.pageYOffset / overlay.offsetHeight) * 100;
+        //       setParallaxItemsStyle(scrollTop);
+        //     };
+        //     const observer = new IntersectionObserver(callback, {
+        //       threshold: thresholdSets,
+        //     });
+        //     observer.observe(document.querySelector(".block111"));
+
+        //     function setParallaxItemsStyle(scrollTop) {
+        //       round.style.cssText = `transform: translate(0, -${scrollTop}%);`;
+        //       trian.style.cssText = `transform: translate(0, -${
+        //         scrollTop / 3
+        //       }%);`;
+        //       rect.style.cssText = `transform: translate(0, -${scrollTop * 10});`;
+        //       rumb.style.cssText = `transform: translate(0, -${scrollTop / 9}%);`;
+        //       cross.style.cssText = `transform: translate(0, -${
+        //         scrollTop / 3
+        //       }%);`;
+        //     }
+        //   }
       });
     </script>
   </body>

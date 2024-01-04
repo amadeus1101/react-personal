@@ -104,7 +104,7 @@ function Intro() {
           />
         </svg>
       </div>
-      <div className="overlay">
+      {/* <div className="overlay">
         <div className="triangle">
           <svg
             width="144"
@@ -190,7 +190,7 @@ function Intro() {
             />
           </svg>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
